@@ -1,0 +1,325 @@
+*{
+    margin:0;
+    padding:0 
+}
+ul{
+    list-style: none;
+}
+body{
+    background-color:#E6E2D9;
+}
+.page{
+    width:100%;
+    position: relative;
+    box-sizing: border-box;
+    perspective: 4000px;
+}
+
+/* 导航栏 */
+.slide{
+    background-color:black;
+    width:100%;
+    height: 80px;
+    width:100%;
+    position: relative;
+    box-sizing: border-box;
+    position: fixed;
+    z-index:999;
+    opacity:0;
+}
+.slide .logo{
+    position: absolute;
+    font-size: 60px;
+    color:#fff;
+    left:20px;
+}
+.slide .nav{
+    position: absolute;
+    font-family: "楷体";
+    font-size: 40px;
+    color:#eee;
+    left:40%;
+    top:30%;
+    cursor:pointer 
+}
+.slide .nav ul li{
+     float: left;
+     margin-left:40px;
+
+}
+
+
+/* page1 轮播图 */
+.page1{
+    width:100%;
+    height:635px;
+}
+.page1 .lunbotu{
+    width:100%;
+    height:635px;
+}
+.page1 .lunbotu ul li{
+   position: absolute;
+   width:100%;
+   height:635px;
+   transition:all 1.5s ease 0s;
+   opacity:0;
+}
+ img{
+    width:100%;
+    height:100%
+}
+.btn{
+    position: absolute;
+    color:rgb(70, 66, 66);
+    z-index:9;
+    width:50px;
+    height:100px;
+    text-align: center;
+    top:350px;
+    font-size:50px;
+    line-height: 100px;
+    cursor:pointer 
+}
+.btn:hover{
+    background-color:rgba(111,111,111,.6);
+    border: 1px solid #000;
+    color:#fff;
+}
+.left{
+    left:150px;
+}
+.right{
+    right:150px;
+}
+
+
+
+/* page2 英雄 */
+.page2{
+    width:100%;
+    height:600px
+}
+.page2 .legends{
+    width:100%;
+    height:600px;
+    margin:0 auto;
+}
+/* legend */
+.page2 .legends .legend{
+    position: absolute;
+    width:100%;
+    height:600px;
+    perspective: 4000px;
+    transform-style: preserve-3d;
+    opacity: 0
+}
+.page2 .legends .legend .unit{
+    background-position: 0px 0px;
+    height:350px;
+    width:220px;
+    background-size:180% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:100px;
+    left:50%;
+    margin-left:-150px;
+}
+.page2 .legends .legend .unit:nth-child(1){
+    background-image:url(../images/APEX/legends/wraith.jpg);
+    transform: rotateY(30deg) translateZ(400px) translateX(200px) ;
+    z-index:7
+}
+.page2 .legends .legend .unit:nth-child(2){
+    background-image:url(../images/APEX/legends/bangalore.jpg);
+    transform: rotateY(30deg) translateZ(200px) translateX(150px);
+    z-index:8
+}
+.page2 .legends .legend .unit:nth-child(3){
+    background-image:url(../images/APEX/legends/bloodhound.jpg);
+    transform:  translateZ(100px);
+    top:120px;
+    z-index:9
+}
+.page2 .legends .legend .unit:nth-child(4){
+    background-image:url(../images/APEX/legends/pathfinder.jpg);
+    transform: rotateY(-30deg) translateZ(200px) translateX(-150px);
+    z-index:8
+}
+.page2 .legends .legend .unit:nth-child(5){
+    background-image:url(../images/APEX/legends/mirage.jpg);
+    transform: rotateY(-30deg) translateZ(400px) translateX(-200px);
+    z-index:7
+}
+/* info */
+
+.page2 .legends .info .unit{
+    background-color:rgba(0, 0, 0, 0.8);
+    /*   width:600px; */
+    width:0;
+    height:400px;
+    z-index:99;
+    position: absolute;
+    overflow: hidden;
+/*     transition:all  0.5s ease 0s; */
+}
+.page2 .legends .info .unit:nth-child(1){
+    right:380px;
+    top:60px;
+
+}
+.page2 .legends .info .unit:nth-child(2){
+    right:550px;
+    top:60px;
+
+}
+.page2 .legends .info .unit:nth-child(3){
+    left:720px;
+    top:60px;
+
+}
+.page2 .legends .info .unit:nth-child(4){
+    
+    left:500px;
+    top:60px;
+
+    
+}
+.page2 .legends .info .unit:nth-child(5){
+    
+    left:300px;
+    top:60px;
+}
+
+
+
+/* skill */
+.page2 .legends .info .unit .skill{
+    position: absolute;
+    height: 72px;
+    width:130px;
+    left:50px;
+}
+.page2 .legends .info .unit .skill img{
+    width: 100%;
+    height: 100%
+}
+.page2 .legends .info .unit .skill:nth-child(1){
+    top:40px;
+
+}
+.page2 .legends .info .unit .skill:nth-child(3){
+    top:160px;
+
+}.page2 .legends .info .unit .skill:nth-child(5){
+    top:280px;
+}
+/* des */
+.page2 .legends .info .unit .des{
+    position: absolute;
+    height: 72px;
+    width:380px;
+    left:50px;
+    color:#fff;
+    line-height: 30px;
+}
+.page2 .legends .info .unit .des p{
+    color:red;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.page2 .legends .info .unit .des:nth-child(2){
+    top:40px;
+    left:200px;
+}
+.page2 .legends .info .unit .des:nth-child(4){
+    top:160px;
+    left:200px;
+
+}.page2 .legends .info .unit .des:nth-child(6){
+    top:280px;
+    left:200px;
+}
+
+
+/* page3 */
+.page3{
+    width:100%;
+    height:560px;
+}
+.page3 .weapon-kind{
+    position: absolute;
+    width:60%;
+    height:60px;
+    left:50px;
+    opacity:0
+}
+.page3 .weapon-kind ul li{
+    position: absolute;
+    width:180px;
+    height:40px;
+    color:#1B1C1F;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.5rem;
+    border: 1px solid #1B1C1F;
+    opacity: .7;
+    cursor: pointer;
+    margin-top:30px;
+}
+.page3 .weapon-kind ul li:nth-child(1){
+    left:60px;
+    top:10px;
+}
+.page3 .weapon-kind ul li:nth-child(2){
+    left:300px;
+    top:10px;
+}
+.page3 .weapon-kind ul li:nth-child(3){
+    left:540px;
+    top:10px;
+}
+
+
+.page3 .weapons{
+    position: absolute;
+    width:60%;
+    height:400px;
+    left:50px;
+    top:100px;
+    overflow: hidden
+}
+.page3 .weapons  div{
+    position: absolute;
+    left:50px;
+    top:-1500px
+}
+.page3 .weapons  div img{
+    width:240px;
+    height:90px;
+    float: left;
+    margin:50px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.page3 .weapondes{
+    position: absolute;
+    width:20%;
+    height:400px;
+    right:150px;
+    top:100px;
+}
+.page3 .weapondes div{
+    position: absolute;
+    opacity:   0;
+}
+.page3 .weapondes div p{
+    margin-bottom:30px;
+}
+.page3 .weapondes div p:nth-child(1){
+    margin-bottom:50px;
+    margin-top:20px;
+    color:#C72000;
+    font-size:1.5rem
+}
