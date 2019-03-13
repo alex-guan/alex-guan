@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>迷宫</title>
+    <title>Document</title>
 </head>
+<style>
+  div{
+    height:744px;
+    width:300px;
+    border:1px solid #ccc;
+    position: absolute;
+    background: #aaa;
+    left:800px;
+    top:0px
+  }
+</style>
 <body>
-    <canvas id="canvas" width="744" height="744" style="border:1px solid black; background:black " ></canvas>
+    <canvas id="canvas" width="744" height="744" style="border:1px solid black; background:#ccc " ></canvas>
+    <div id="log"></div>
+    
     <script src="js/Game.js"></script>
     <script src="js/Dog.js"></script>
     <script src="js/Map.js"></script>

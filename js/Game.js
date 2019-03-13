@@ -1,6 +1,7 @@
 function Game() {
     this.canvas = document.getElementById("canvas");
     this.ctx = canvas.getContext('2d');
+    this.log=document.getElementById("log")
     var arr = [
         "1.png",
         "2.png",
@@ -50,22 +51,22 @@ Game.prototype.start = function () {
 //碰撞检测
 Game.prototype.peng = function () {
 
-    if (this.dog.direction == "0") {
+    if (this.dog.direction == "0"&&this.wall.chuanqiang[0]) {
         if (this.map.code[this.dog.row + 2][this.dog.col] !== 0 || this.map.code[this.dog.row + 2][this.dog.col + 1] !== 0) {
             this.dog.isRun = false
         }
     }
-    if (this.dog.direction == "3") {
+    if (this.dog.direction == "3"&&this.wall.chuanqiang[3]) {
         if (this.map.code[this.dog.row - 1][this.dog.col] !== 0 || this.map.code[this.dog.row - 1][this.dog.col + 1] !== 0) {
             this.dog.isRun = false
         }
     }
-    if (this.dog.direction == "1") {
+    if (this.dog.direction == "1"&&this.wall.chuanqiang[1]) {
         if (this.map.code[this.dog.row][this.dog.col - 1] !== 0 || this.map.code[this.dog.row + 1][this.dog.col - 1] !== 0) {
             this.dog.isRun = false
         }
     }
-    if (this.dog.direction == "2") {
+    if (this.dog.direction == "2"&&this.wall.chuanqiang[2]) {
         if (this.map.code[this.dog.row][this.dog.col + 2] !== 0 || this.map.code[this.dog.row + 1][this.dog.col + 2] !== 0) {
             this.dog.isRun = false
         }
@@ -73,8 +74,18 @@ Game.prototype.peng = function () {
 
 }
 Game.prototype.skill=function(){
+    
     if (this.dog.row=="1"&&this.dog.col=="28" ){
-        this.big=null
-        this.canvas.style="background:#fff"
+        this.big.exist=false;
+        this.canvas.style="background:#fff";
+        
+    }
+    if (this.dog.row=="1"&&this.dog.col=="2" ){
+        this.little.exist=false;
+    }
+    if (this.dog.row=="25"&&this.dog.col=="6" ){
+        this.wall.exist=false;
+        this.wall.chuanqiang[this.wall.random]=0;
+        console.log(this.log)
     }
 }
