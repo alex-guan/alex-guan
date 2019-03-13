@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="javascript:now=1">画笔</button>
+    <button onclick="javascript:now=0">橡皮</button>
+    <canvas id="canvas" width=744 height=744 style="border:1px solid black"></canvas>
+    <textarea id="text" cols="80" rows="33"></textarea>
+    <script>
+        var maparr = (function () {
+            var resule = []
+            for (var i = 0; i < 31; i++) {
+                var row = []
+                for (var j = 0; j < 31; j++) {
+                    row.push(0)
+                }
+                resule.push(row)
+            }
+            return resule;
+        })()
+        console.log(maparr)
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+        img.src = "images/1.png";
+        img.onload = function () {
+            start()
+        }
+
+        function start() {
+            canvas.onmousedown = function (e) {    
+                draw(e.offsetX,e.offsetY);
+                canvas.onmousemove = function (e) {
+                    draw(e.offsetX,e.offsetY);
+                }
+                }
+                
+                canvas.onmouseup = function () {
+                    canvas.onmousemove = null;
+                }
+            }
+           
+var now=1
+function draw(x,y){
+    if(now != 0){
+                ctx.drawImage(img,parseInt(x / 24)*24,parseInt(y / 24)*24,24,24);
+            }else{
+                //擦除
+                ctx.clearRect(parseInt(x / 24)*24,parseInt(y / 24)*24,24,24);
+            }
+    var col=parseInt(x / 24);
+    var row=parseInt(y / 24);
+    maparr[row][col]=now;
+    console.log(maparr[row][col])
+    document.getElementById("text").value = JSON.stringify(maparr);
+}
+    </script>
+</body>
+
+</html>
