@@ -102,6 +102,6 @@ Game.prototype.skill=function(){
     }
     if (this.dog.row=="28"&&this.dog.col=="27" ){
         this.out.exist=true;
-        alert("Luck Boy")
+        alert(" You Are Luck Dog")
     }
 }
