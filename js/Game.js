@@ -8,7 +8,9 @@ function Game() {
         "dog.gif",
         "light_big.png",
         "light_little.png",
-        "wall.png"
+        "wall.png",
+        "bg.png",
+        "Out.png"
     ]
     this.R = {}
     var self = this;
@@ -35,16 +37,25 @@ Game.prototype.start = function () {
     this.little=new Light_little(this)
     this.big=new Light_big(this)
     this.wall=new Wall(this)
+    this.layer=new Layer(this)
+    this.out=new Out(this)
     var self = this;
     setInterval(function () {
         self.peng()
         self.ctx.clearRect(0, 0, 944, 744)
-        self.dog.render()
+        self.out.render()
         self.dog.update()
+        self.dog.render()
+      
         self.map.render()
+       /*  self.layer.render() */
+   
         self.little.render()
         self.wall.render()
         self.big.render()
+       
+       
+    
         self.skill()
     }, 20)
 }
@@ -78,14 +89,19 @@ Game.prototype.skill=function(){
     if (this.dog.row=="1"&&this.dog.col=="28" ){
         this.big.exist=false;
         this.canvas.style="background:#fff";
+        this.out.exist=true;
         
     }
     if (this.dog.row=="1"&&this.dog.col=="2" ){
         this.little.exist=false;
+        this.dog.little=false;
     }
     if (this.dog.row=="25"&&this.dog.col=="6" ){
         this.wall.exist=false;
         this.wall.chuanqiang[this.wall.random]=0;
-        console.log(this.log)
+    }
+    if (this.dog.row=="28"&&this.dog.col=="27" ){
+        this.out.exist=true;
+        alert("Luck Boy")
     }
 }

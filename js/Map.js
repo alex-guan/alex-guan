@@ -39,6 +39,7 @@ Map.prototype.render = function () {
         for (var j = 0; j < 31; j++) {
             if (this.code[j][i] !== 0) {
                 this.owner.ctx.drawImage(this.owner.R["1.png"],0,0,24,24, i * 24, j * 24, 24, 24)
+              /*  this.owner.ctx.drawImage(this.owner.R["bg.png"],i*24,j*24,24,24, i * 24, j * 24, 24, 24) */
             }
         }
     }
