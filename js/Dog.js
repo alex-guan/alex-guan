@@ -12,19 +12,21 @@ function Dog(owner) {
     this.bind();
     this.little = true
 }
+//dog 和视野渲染
 Dog.prototype.render = function () {
     this.col = Math.round(this.x / 24);
     this.row = Math.round(this.y / 24);
-    this.owner.ctx.fillStyle = "#fff";
+  
+    this.owner.ctx.fillStyle ="rgba(255,255,255,.2)";
     if (this.little) {
         this.owner.ctx.fillRect(this.x - 40, this.y - 40, 120, 120)
     } else {
         this.owner.ctx.fillRect(this.x - 80, this.y - 80, 240, 240)
-        
-
     }
     this.owner.ctx.drawImage(this.owner.R["dog.gif"], this.step * 64, this.direction * 64, 64, 64, this.x, this.y, 48, 48)
+    
 }
+//dog移动
 Dog.prototype.update = function () {
     if (this.isRun) {
         this.go()
@@ -63,6 +65,7 @@ Dog.prototype.update = function () {
         }
     }
 }
+//键盘事件
 Dog.prototype.bind = function () {
     var self = this;
     document.onkeydown = function (e) {

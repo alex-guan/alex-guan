@@ -7,24 +7,20 @@
     <title>Document</title>
 </head>
 <style>
-  div{
+  #log{
     height:744px;
     width:300px;
     border:1px solid #ccc;
     position: absolute;
-    background: #aaa;
-    left:800px;
-    top:0px
+    background: #000;
+    left:754px;
+    top:10px
   }
 </style>
 <body>
-    <canvas id="canvas" width="744" height="744" style="border:1px solid black; background:black;
+    <canvas id="canvas" width="744" height="744" style="border:1px solid black; background:  url(images/bg.png) ;
      " ></canvas>
-    <div id="log"><p>穿墙术：随机获得上、下、左、右一个方向的穿墙技能</p>
-                 <p>小光明书：视野扩大2公分</p>
-                 <p>大光明书：视野全图化，出口现行</p>
-
-    </div>
+    <canvas id="log"  width="300" height="744" ></canvas>
     
     <script src="js/Game.js"></script>
     <script src="js/Dog.js"></script>
