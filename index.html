@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <style>
+  body{
+    background: #000;
+  }
   #log{
     height:744px;
     width:300px;
@@ -16,21 +19,56 @@
     left:754px;
     top:10px
   }
+  .btns{
+    height:115px;
+    width:300px;
+    position: absolute;
+    left:754px;
+    top:640px;
+    border:1px solid #ccc;
+    background: black;
+    display: flex;
+    font-size: 2rem;
+  }
+  .btns_1{
+    flex:1;
+    text-align: center;
+    line-height: 115px;
+    color:blanchedalmond;
+    cursor: pointer
+  }
+  .btns_1:hover{
+    font-size: 3rem;
+  }
+  .btns_2{
+    flex:1;
+    background: url(images/bg.png);
+    line-height: 115px;
+    text-align: center;
+    color:blanchedalmond;
+    cursor: pointer
+  }
+  .btns_2:hover{
+    font-size: 3rem;
+  }
 </style>
 <body>
-    <canvas id="canvas" width="744" height="744" style="border:1px solid black; background:  url(images/bg.png) ;
+    <canvas id="canvas" width="744" height="744" style="border:1px solid black;
      " ></canvas>
     <canvas id="log"  width="300" height="744" ></canvas>
-    
+    <div id="btns" class="btns">
+      <div class="btns_1" id="btns_1">关灯</div>
+      <div class="btns_2" id="btns_2">开灯</div>
+    </div>
     <script src="js/Game.js"></script>
     <script src="js/Dog.js"></script>
     <script src="js/Map.js"></script>
-    <script src="js/Vew.js"></script>
     <script src="js/Layer.js"></script>
     <script src="js/Light_big.js"></script>
     <script src="js/Light_little.js"></script>
     <script src="js/Wall.js"></script>
     <script src="js/Out.js"></script>
+    <script src="js/Trap.js"></script>
     <script>
       var migong=new Game()
     </script>

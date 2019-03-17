@@ -6,7 +6,7 @@ function Wall(owner) {
 }
 Wall.prototype.render = function () {
     if (this.exist) {
-        this.owner.ctx.drawImage(this.owner.R["wall.png"], 675, 535, 40, 40);
+        this.owner.ctx.drawImage(this.owner.R["wall.png"], 98,16 * 24, 40, 40);
     } else {
         //0下、1左、2右、3上
         if (this.random == 0) {
