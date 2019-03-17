@@ -36,7 +36,6 @@ Trap.prototype.render = function () {
         if (((this.y - 32) / 24) < 31) {
             this.row = parseInt((this.y - 32) / 24) + 2
         }
-
         if (this.f % 100 == 0) {
 
             this.step++

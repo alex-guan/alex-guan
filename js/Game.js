@@ -182,11 +182,19 @@ Game.prototype.changeBg=function(){
 }
 Game.prototype.debuff=function(){
     for(var i=0;i<this.traps.length;i++){
-        if(this.traps[i].row<31&&this.traps[i].col<31){
-            if( this.map.code[this.traps[i].row][this.traps[i].col]==0){
+        if(this.traps[i].row<31&&this.traps[i].col<31&&this.traps[i].row>0&&this.traps[i].col>0){
+            if( this.map.code[this.traps[i].row][this.traps[i].col]){
                 this.map.code[this.traps[i].row][this.traps[i].col]=3
+                this.map.code[this.traps[i].row-1][this.traps[i].col]=3
+                this.map.code[this.traps[i].row][this.traps[i].col-1]=3
+                this.map.code[this.traps[i].row-1][this.traps[i].col-1]=3
+                this.map.code[this.traps[i].row+1][this.traps[i].col]=3
+                this.map.code[this.traps[i].row+1][this.traps[i].col+1]=3
+                this.map.code[this.traps[i].row][this.traps[i].col+1]=3
+                this.map.code[this.traps[i].row][this.traps[i].col+2]=3
+                this.map.code[this.traps[i].row][this.traps[i].col-2]=3
             } 
-            if( this.map.code[this.dog.row][this.dog.col]==3||this.map.code[this.dog.row+1][this.dog.col+1]==3||this.map.code[this.dog.row+1][this.dog.col]==3||this.map.code[this.dog.row][this.dog.col+1]==3||this.map.code[this.dog.row][this.dog.col+2]==3){
+            if( this.map.code[this.dog.row][this.dog.col]==3||this.map.code[this.dog.row+1][this.dog.col+1]==3||this.map.code[this.dog.row+1][this.dog.col]==3||this.map.code[this.dog.row][this.dog.col+1]==3||this.map.code[this.dog.row][this.dog.col+2]==3||this.map.code[this.dog.row-1][this.dog.col-1]==3||this.map.code[this.dog.row-1][this.dog.col]==3||this.map.code[this.dog.row][this.dog.col-1]==3||this.map.code[this.dog.row][this.dog.col-2]==3){
                 this.dog.speed=0;
                 this.dog.true=false;
             }

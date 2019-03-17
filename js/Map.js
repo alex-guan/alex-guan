@@ -54,7 +54,7 @@ Map.prototype.update = function () {
     this.f++
     for (var i = 0; i < 31; i++) {
         for (var j = 0; j < 31; j++) {
-            if (this.f % 300 == 0) {
+            if (this.f % 500 == 0) {
                 if (this.code[j][i] == 3) {
                     this.code[j][i] = 0;
                 }
